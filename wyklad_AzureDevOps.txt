@@ -1,0 +1,25 @@
+
+	Nie do końca jest zrozumiała sama specyfika tych artyfaktów i pipelinów.
+	Pan powiedział, że to są pewnego rodzaju konfiguracje które wskazują jak musi być zbudowany kod z wskazanego źródła,
+	(W Pana przypadku z BitBucket), mogą być przechowywane jako zip. 
+	I kiędy są wprowadzone jakieś zmiany, ten "pipeline" jest po to żeby zgodnie z konfiguracją wykonać "deploy".
+
+	Czy tak to jest ? 
+	Jeśli tak, to po co wtedy możliwość stworzenia więcej niż jednego pipeline na jeden projekt ? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
