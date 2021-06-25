@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab4_WebApi.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Api Test Application" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            
+            <Image x:Name="imgPhoto" Grid.Row="0"/>
+            <StackLayout BackgroundColor="DodgerBlue" Grid.Row="1">
+                <Button x:Name="btnPhoto" Text="Take a picture" />
+                <Entry x:Name="tbxFirstName" Placeholder="First Name"/>
+                <Entry x:Name="tbxLastName" Placeholder="Last Name"/>
+                <Entry x:Name="tbxPhoneNumber" Placeholder="Phone Number" Keyboard="Telephone"/>
+            </StackLayout>
+
+            <Button Text="Start" Grid.Row="2"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
