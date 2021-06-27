@@ -14,7 +14,6 @@ namespace Lab1_bobrivnyk.Rest.Context
         {
 
         }
-
         public AzureDbContext(DbContextOptions<AzureDbContext> options) : base(options)
         {
             Database.EnsureCreated();
@@ -22,12 +21,10 @@ namespace Lab1_bobrivnyk.Rest.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(@"Server=tcp:lab3-database-server.database.windows.net,1433;
-            Initial Catalog=bobrivnykLab1-cdv;Persist Security Info=False;
-            User ID=dbobrivnyk;Password=j95h1VA15i;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            options.UseSqlServer("Server=tcp:lab3-database-server.database.windows.net,1433;Initial Catalog=bobrivnykLab1-cdv;Persist Security Info=False;User ID=dbobrivnyk;Password=VeryStrongPassword@1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
 
-        public DbSet<Person> People { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 
 

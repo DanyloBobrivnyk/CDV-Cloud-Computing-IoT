@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Lab1_bobrivnyk.Rest.Configurations;
 using Lab1_bobrivnyk.Rest.Context;
+using Lab1_bobrivnyk.Rest.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,14 +30,19 @@ namespace Lab1_bobrivnyk.Rest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //configure dbcontext
             services.AddMvc();
             var connectionString = Configuration.GetConnectionString("AzureDb");
             services.AddDbContext<AzureDbContext>(options =>
-                {
-                    options.UseSqlServer(connectionString);
-                });
+            {
+                options.UseSqlServer(connectionString);
+            });
 
-            
+            // configure strongly typed settings object
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
+            // configure DI for application services
+            services.AddScoped<IUserService, UserService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -59,6 +66,8 @@ namespace Lab1_bobrivnyk.Rest
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

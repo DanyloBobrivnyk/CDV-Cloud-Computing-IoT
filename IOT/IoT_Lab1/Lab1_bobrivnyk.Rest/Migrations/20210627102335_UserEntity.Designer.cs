@@ -3,14 +3,16 @@ using Lab1_bobrivnyk.Rest.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Lab1_bobrivnyk.Rest.Migrations
 {
     [DbContext(typeof(AzureDbContext))]
-    partial class AzureDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210627102335_UserEntity")]
+    partial class UserEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

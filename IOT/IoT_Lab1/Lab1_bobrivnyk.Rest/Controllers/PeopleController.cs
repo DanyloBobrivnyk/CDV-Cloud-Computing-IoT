@@ -24,7 +24,7 @@ namespace Lab1_bobrivnyk.Rest.Controllers
         [HttpGet]
         public IActionResult GetPeople()
         {
-            return Ok(_context.People);
+            return Ok(_context.Users);
         }
     }
 }
